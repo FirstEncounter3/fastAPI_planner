@@ -1,0 +1,22 @@
+### create user
+
+POST http://0.0.0.0:8000/user/signup
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email": "fastapi@packt.com",
+    "password": "Str0ng!",
+    "username": "FastPackt"
+}
+
+### login user
+
+POST http://0.0.0.0:8000/user/signin
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email": "fastapi@packt.com",
+    "password": "Str0ng!"
+}

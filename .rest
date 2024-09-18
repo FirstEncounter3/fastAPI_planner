@@ -1,6 +1,6 @@
 ### create user
 
-POST http://0.0.0.0:8000/user/signup
+POST http://0.0.0.0:8000/user/signup/
 Accept: application/json
 Content-Type: application/json
 
@@ -12,7 +12,7 @@ Content-Type: application/json
 
 ### login user
 
-POST http://0.0.0.0:8000/user/signin
+POST http://0.0.0.0:8000/user/signin/
 Accept: application/json
 Content-Type: application/json
 
@@ -20,3 +20,32 @@ Content-Type: application/json
     "email": "fastapi@packt.com",
     "password": "Str0ng!"
 }
+
+
+### get events
+
+GET http://0.0.0.0:8000/event/
+Accept: application/json
+
+
+### create event
+
+POST http://0.0.0.0:8000/event/new/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "id": 1,
+    "title": "FastAPI book launch",
+    "image": "https://linktomyimage.com/image.png",
+    "description": "info",
+    "tags": ["python", "fastapi", "book", "launch"],
+    "location": "Google meet"
+}
+
+
+### delete event with id 1
+
+DELETE http://0.0.0.0:8000/event/1
+Accept: application/json
+

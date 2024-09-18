@@ -31,7 +31,7 @@ async def sign_user_in(user: UserSignIn) -> dict:
             status_code=status.HTTP_403_FORBIDDEN,
             detail="Invalid credentials",
         )
-    
+
     return {
         "message": "User logged in successfully",
     }

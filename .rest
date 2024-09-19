@@ -21,12 +21,10 @@ Content-Type: application/json
     "password": "Str0ng!"
 }
 
-
 ### get events
 
 GET http://0.0.0.0:8000/event/
 Accept: application/json
-
 
 ### create event
 
@@ -43,9 +41,23 @@ Content-Type: application/json
     "location": "Google meet"
 }
 
+### get event by id 1
+
+GET http://0.0.0.0:8000/event/1/
+Accept: application/json
+
+
+### update event with id 1
+
+PUT http://0.0.0.0:8000/event/edit/1/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "title": "FastAPI book launch II"
+}
 
 ### delete event with id 1
 
 DELETE http://0.0.0.0:8000/event/1
 Accept: application/json
-

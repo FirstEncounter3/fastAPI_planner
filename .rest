@@ -22,11 +22,15 @@ Content-Type: application/json
 }
 
 
+### get users (experimental)
+
+GET http://0.0.0.0:8000/user/users
+Accept: application/json
+
 ### get events
 
 GET http://0.0.0.0:8000/event/
 Accept: application/json
-
 
 ### create event
 
@@ -35,17 +39,36 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "id": 1,
-    "title": "FastAPI book launch",
+    "title": "FastAPI book launch 2",
     "image": "https://linktomyimage.com/image.png",
     "description": "info",
     "tags": ["python", "fastapi", "book", "launch"],
     "location": "Google meet"
 }
 
+### get event by id 66ec6e0599dfba434243f876 (auto create by mongoDB)
 
-### delete event with id 1
-
-DELETE http://0.0.0.0:8000/event/1
+GET http://0.0.0.0:8000/event/66ec6e0599dfba434243f876/
 Accept: application/json
 
+
+### update event with id 66ec6e0599dfba434243f876
+
+PUT http://0.0.0.0:8000/event/66ec6e0599dfba434243f876/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "location": "Hybrid"
+}
+
+### delete event with id 66ec6e0599dfba434243f876
+
+DELETE http://0.0.0.0:8000/event/66ec6e0599dfba434243f876/
+Accept: application/json
+
+
+### delete all events
+
+DELETE http://0.0.0.0:8000/event/
+Accept: application/json

@@ -5,21 +5,18 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "email": "fastapi@packt.com",
-    "password": "Str0ng!",
+    "email": "user7@packt.com",
+    "password": "password",
     "username": "FastPackt"
 }
 
 ### login user
 
-POST http://0.0.0.0:8000/user/signin/
+POST http://0.0.0.0:8000/user/signin
 Accept: application/json
-Content-Type: application/json
+Content-Type: application/x-www-form-urlencoded
 
-{
-    "email": "fastapi@packt.com",
-    "password": "Str0ng!"
-}
+grant_type=password&username=user7%40packt.com&password=password&scope=&client_id=string&client_secret=string
 
 
 ### get users (experimental)

@@ -26,17 +26,17 @@ class User(Document):
     )
 
 
-class UserSignIn(BaseModel):
-    email: EmailStr
-    password: str
+class TokenResponse(BaseModel):
+    access_token: str
+    token_type: str
 
-    model_config = {
-        "json_schema_extra": {
-            "examples": [
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": [
                 {
-                    "email": "pQ8oG@example.com",
-                    "password": "secret",
+                    "access_token": "eyJhbGciOiJIUz4.eyJzdWIiOiJhZG1pbiIsIm5pY2tObyI6IjIzMDUifQ.eyJpYXQiOjE2NjUzNjUyNjAsImV4cCI6MTY2NTM2OTI2NjAxfQ",
+                    "token_type": "Bearer",
                 }
             ]
         }
-    }
+    )

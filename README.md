@@ -1,6 +1,6 @@
-# Project Name
+# Planner
 
-A brief description of your project.
+A brief description of project.
 
 ## Table of Contents
 

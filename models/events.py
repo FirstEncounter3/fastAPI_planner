@@ -9,6 +9,7 @@ class Event(Document):
     description: str
     tags: list[str]
     location: str
+    creator: Optional[str] = None
 
     model_config = ConfigDict(
         json_schema_extra={
@@ -17,7 +18,7 @@ class Event(Document):
                 "image": "https://linktomyimg.com/img.png",
                 "description": "We will be discussing the contents of the FastAPI book in this event. Ensure to come with your own copy to win gifts!",
                 "tags": ["python", "fastapi", "book", "launch"],
-                "location": "San Francisco, CA",
+                "location": "San Francisco, CA"
             }
         }
     )
@@ -40,7 +41,7 @@ class EventUpdate(BaseModel):
                 "image": "https://linktomyimage.com/image.png",
                 "description": "We will be discussing the contents of the FastAPI book in this event. Ensure to come with your own copy to win gifts!",
                 "tags": ["python", "fastapi", "book", "launch"],
-                "location": "Google Meet",
+                "location": "Google Meet"
             }
         }
     )

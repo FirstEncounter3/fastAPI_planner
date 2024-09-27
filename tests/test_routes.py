@@ -5,8 +5,6 @@ import pytest
 from auth.jwt_handler import create_access_token
 from models.events import Event
 
-# cleanup_db_events: None
-
 
 @pytest.fixture
 async def access_token() -> str:

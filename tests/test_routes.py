@@ -120,7 +120,19 @@ async def test_delete_event(
 
     url = f"event/{str(mock_event.id)}"
 
+    response = await default_client.get("/event/")
+    events = response.json()
+
+    assert response.status_code == 200
+    assert len(events) == 1
+
     response = await default_client.delete(url, headers=headers)
 
     assert response.status_code == 200
     assert response.json() == test_response
+
+    response = await default_client.get("/event/")
+    events = response.json()
+
+    assert response.status_code == 200
+    assert len(events) == 0

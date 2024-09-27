@@ -26,7 +26,12 @@ async def default_client():
 
 
 @pytest.fixture
-async def cleanup_db():
+async def cleanup_db_users():
+    yield
+    await User.find_all().delete()
+
+
+@pytest.fixture
+async def cleanup_db_events():
     yield
     await Event.find_all().delete()
-    await User.find_all().delete()

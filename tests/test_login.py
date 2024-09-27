@@ -16,7 +16,7 @@ async def test_sign_new_user(default_client: httpx.AsyncClient) -> None:
 
 @pytest.mark.asyncio
 async def test_sign_user_in(
-    default_client: httpx.AsyncClient, cleanup_db: None
+    default_client: httpx.AsyncClient, cleanup_db_users: None
 ) -> None:
     payload = {"username": "testuser@test.org", "password": "testpassword"}
     headers = {
